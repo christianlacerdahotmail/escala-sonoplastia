@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/vi/operador")
+@RequestMapping("/v1/operador")
 public interface OperadorAPI {
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
