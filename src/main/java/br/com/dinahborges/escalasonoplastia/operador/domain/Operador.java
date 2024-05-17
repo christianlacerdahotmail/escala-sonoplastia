@@ -3,6 +3,7 @@ package br.com.dinahborges.escalasonoplastia.operador.domain;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import br.com.dinahborges.escalasonoplastia.operador.application.api.OperadorRequest;
 import jakarta.persistence.Entity;
 import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
@@ -23,11 +24,11 @@ public class Operador {
 	private LocalDateTime dataHoraDoCadatro;
 	private LocalDateTime dataHoraDaUltimaAlteracao;
 	
-	public Operador(@NotNull LocalDate data, @NotNull String diaDaSemana, String primeiroNome) {
-		super();
-		this.data = data;
-		this.diaDaSemana = diaDaSemana;
-		this.primeiroNome = primeiroNome;
+	
+	public Operador(OperadorRequest operadorRequest) {
+		this.data = operadorRequest.getData();
+		this.diaDaSemana = operadorRequest.getDiaDaSemana();
+		this.primeiroNome =  operadorRequest.getPrimeiroNome();
 		this.dataHoraDoCadatro = LocalDateTime.now();
 	}
 	
