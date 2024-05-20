@@ -23,7 +23,7 @@ public class OperadorApplicationService implements OperadorService {
 		Operador operador = operadorRepository.salva(new Operador(operadorRequest));
 		log.info("[finaliza] OperadorApplicationService - criaOperador");
 		return OperadorResponse.builder()
-				.primeiroNome(operador.getPrimeiroNome())
+				.idOperador(operador.getIdOperador())
 				.build();
 	}
 
