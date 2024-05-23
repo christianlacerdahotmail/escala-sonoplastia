@@ -10,7 +10,5 @@ import lombok.Value;
 @Builder
 public class OperadorResponse {
 	private UUID idOperador;
-	private String primeiroNome;
 	
-
 }

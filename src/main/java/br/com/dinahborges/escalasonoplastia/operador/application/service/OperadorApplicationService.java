@@ -1,7 +1,5 @@
 package br.com.dinahborges.escalasonoplastia.operador.application.service;
 
-import java.security.spec.RSAOtherPrimeInfo;
-
 import org.springframework.stereotype.Service;
 
 import br.com.dinahborges.escalasonoplastia.operador.application.api.OperadorRequest;

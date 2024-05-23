@@ -17,7 +17,7 @@ public class OperadorController implements OperadorAPI {
 		log.info("[inicia] OperadorController - postOperdor");
 		OperadorResponse operadorCriado = operadorService.criaOperador(operadorRequest);
 		log.info("[finaliza] OperadorController - postOperdor");
-		return null;
+		return operadorCriado;
 	}
 
 }
