@@ -1,5 +1,7 @@
 package br.com.dinahborges.escalasonoplastia.operador.application.api;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.dinahborges.escalasonoplastia.operador.application.service.OperadorService;
@@ -18,6 +20,13 @@ public class OperadorController implements OperadorAPI {
 		OperadorResponse operadorCriado = operadorService.criaOperador(operadorRequest);
 		log.info("[finaliza] OperadorController - postOperdor");
 		return operadorCriado;
+	}
+
+	@Override
+	public List<OperadorListResponse> getTodosOperadores() {
+		log.info("[inicia] OperadorController - getTodosOperadores");
+		log.info("[finaliza] OperadorController - getTodosOperadores");
+		return null;
 	}
 
 }
