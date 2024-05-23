@@ -1,7 +1,10 @@
 package br.com.dinahborges.escalasonoplastia.operador.application.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
+import br.com.dinahborges.escalasonoplastia.operador.application.api.OperadorListResponse;
 import br.com.dinahborges.escalasonoplastia.operador.application.api.OperadorRequest;
 import br.com.dinahborges.escalasonoplastia.operador.application.api.OperadorResponse;
 import br.com.dinahborges.escalasonoplastia.operador.application.repository.OperadorRepository;
@@ -23,6 +26,13 @@ public class OperadorApplicationService implements OperadorService {
 		return OperadorResponse.builder()
 				.idOperador(operador.getIdOperador())
 				.build();
+	}
+
+	@Override
+	public List<OperadorListResponse> buscaTodosOperadores() {
+		log.info("[inicia] OperadorApplicationService - buscaTodosOperadores");
+		log.info("[finaliza] OperadorApplicationService - buscaTodosOperadores");
+		return null;
 	}
 
 }

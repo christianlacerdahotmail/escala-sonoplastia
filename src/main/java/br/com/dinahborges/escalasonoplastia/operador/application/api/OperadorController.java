@@ -25,8 +25,9 @@ public class OperadorController implements OperadorAPI {
 	@Override
 	public List<OperadorListResponse> getTodosOperadores() {
 		log.info("[inicia] OperadorController - getTodosOperadores");
+		List<OperadorListResponse> operadores = operadorService.buscaTodosOperadores();
 		log.info("[finaliza] OperadorController - getTodosOperadores");
-		return null;
+		return operadores;
 	}
 
 }
