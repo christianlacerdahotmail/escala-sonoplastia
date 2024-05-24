@@ -1,5 +1,7 @@
 package br.com.dinahborges.escalasonoplastia.operador.infra;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import br.com.dinahborges.escalasonoplastia.operador.application.repository.OperadorRepository;
@@ -20,6 +22,13 @@ public class OperadorInfraRepository implements OperadorRepository {
 		operadorSpringDataJPARepository.save(operador);
 		log.info("[finaliza] OperadorInfraRepository - salva");
 		return operador;
+	}
+
+	@Override
+	public List<Operador> buscaTodosOperadores() {
+		log.info("[inicia] OperadorInfraRepository - buscaTodosOperadores");
+		log.info("[finaliza] OperadorInfraRepository - buscaTodosOperadores");
+		return null;
 	}
 
 }

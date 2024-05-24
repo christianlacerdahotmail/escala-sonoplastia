@@ -31,8 +31,9 @@ public class OperadorApplicationService implements OperadorService {
 	@Override
 	public List<OperadorListResponse> buscaTodosOperadores() {
 		log.info("[inicia] OperadorApplicationService - buscaTodosOperadores");
+		List<Operador> operadores = operadorRepository.buscaTodosOperadores();
 		log.info("[finaliza] OperadorApplicationService - buscaTodosOperadores");
-		return null;
+		return OperadorListResponse.converte(operadores);
 	}
 
 }
