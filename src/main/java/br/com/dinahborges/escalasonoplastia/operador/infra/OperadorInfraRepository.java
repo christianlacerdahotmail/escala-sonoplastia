@@ -27,8 +27,9 @@ public class OperadorInfraRepository implements OperadorRepository {
 	@Override
 	public List<Operador> buscaTodosOperadores() {
 		log.info("[inicia] OperadorInfraRepository - buscaTodosOperadores");
+		List<Operador> todosOperadores = operadorSpringDataJPARepository.findAll();
 		log.info("[finaliza] OperadorInfraRepository - buscaTodosOperadores");
-		return null;
+		return todosOperadores;
 	}
 
 }
