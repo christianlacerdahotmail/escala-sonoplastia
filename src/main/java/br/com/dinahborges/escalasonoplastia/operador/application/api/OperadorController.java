@@ -35,8 +35,9 @@ public class OperadorController implements OperadorAPI {
 	public OperadorDetalhadoResponse getOperadorAtravesId(UUID idOperador) {
 		log.info("[inicia] OperadorController - getOperadorAtravesId");
 		log.info("[idOperador] {}", idOperador);
+		OperadorDetalhadoResponse operadorDetalhado = operadorService.buscaOperadorAtravesId(idOperador);
 		log.info("[finaliza] OperadorController - getOperadorAtravesId");
-		return null;
+		return operadorDetalhado ;
 	}
 
 }
