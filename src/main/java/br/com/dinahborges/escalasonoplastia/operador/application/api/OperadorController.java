@@ -1,6 +1,7 @@
 package br.com.dinahborges.escalasonoplastia.operador.application.api;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,6 +29,14 @@ public class OperadorController implements OperadorAPI {
 		List<OperadorListResponse> operadores = operadorService.buscaTodosOperadores();
 		log.info("[finaliza] OperadorController - getTodosOperadores");
 		return operadores;
+	}
+
+	@Override
+	public OperadorDetalhadoResponse getOperadorAtravesId(UUID idOperador) {
+		log.info("[inicia] OperadorController - getOperadorAtravesId");
+		log.info("[idOperador] {}", idOperador);
+		log.info("[finaliza] OperadorController - getOperadorAtravesId");
+		return null;
 	}
 
 }
