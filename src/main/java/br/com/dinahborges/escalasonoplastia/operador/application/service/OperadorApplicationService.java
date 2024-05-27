@@ -41,8 +41,9 @@ public class OperadorApplicationService implements OperadorService {
 	@Override
 	public OperadorDetalhadoResponse buscaOperadorAtravesId(UUID idOperador) {
 		log.info("[inicia] OperadorApplicationService - buscaOperadorAtravesId");
+		Operador operador =  operadorRepository.buscaOperadorAtravesId(idOperador);
 		log.info("[finaliza] OperadorApplicationService - buscaOperadorAtravesId");
-		return null;
+		return new OperadorDetalhadoResponse(operador);
 	}
 
 }

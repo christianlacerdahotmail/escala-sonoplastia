@@ -1,6 +1,7 @@
 package br.com.dinahborges.escalasonoplastia.operador.infra;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.stereotype.Repository;
 
@@ -30,6 +31,15 @@ public class OperadorInfraRepository implements OperadorRepository {
 		List<Operador> todosOperadores = operadorSpringDataJPARepository.findAll();
 		log.info("[finaliza] OperadorInfraRepository - buscaTodosOperadores");
 		return todosOperadores;
+	}
+
+	@Override
+	public Operador buscaOperadorAtravesId(UUID idOperador) {
+		log.info("[inicia] OperadorInfraRepository - buscaOperadorAtravesId");
+		Operador operador = operadorSpringDataJPARepository.findByIdOperador(idOperador)
+				.orElseThrow(() -> new RuntimeException("Operador não encontrado!"));
+		log.info("[finaliza] OperadorInfraRepository - buscaOperadorAtravesId");
+		return operador;
 	}
 
 }
