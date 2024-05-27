@@ -3,8 +3,10 @@ package br.com.dinahborges.escalasonoplastia.operador.infra;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
+import br.com.dinahborges.escalasonoplastia.handler.APIException;
 import br.com.dinahborges.escalasonoplastia.operador.application.repository.OperadorRepository;
 import br.com.dinahborges.escalasonoplastia.operador.domain.Operador;
 import lombok.RequiredArgsConstructor;
@@ -37,7 +39,7 @@ public class OperadorInfraRepository implements OperadorRepository {
 	public Operador buscaOperadorAtravesId(UUID idOperador) {
 		log.info("[inicia] OperadorInfraRepository - buscaOperadorAtravesId");
 		Operador operador = operadorSpringDataJPARepository.findByIdOperador(idOperador)
-				.orElseThrow(() -> new RuntimeException("Operador não encontrado!"));
+				.orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Operador não encontrado!"));
 		log.info("[finaliza] OperadorInfraRepository - buscaOperadorAtravesId");
 		return operador;
 	}
