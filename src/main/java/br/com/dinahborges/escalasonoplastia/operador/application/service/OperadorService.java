@@ -13,5 +13,5 @@ public interface OperadorService {
 	OperadorResponse criaOperador(OperadorRequest operadorRequest);
 	List<OperadorListResponse> buscaTodosOperadores();
 	OperadorDetalhadoResponse buscaOperadorAtravesId(UUID idOperador);
-
+	void deletaOperadorAtravesId(UUID idOperador);
 }

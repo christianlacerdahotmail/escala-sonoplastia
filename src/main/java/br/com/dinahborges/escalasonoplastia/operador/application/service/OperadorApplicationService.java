@@ -46,4 +46,12 @@ public class OperadorApplicationService implements OperadorService {
 		return new OperadorDetalhadoResponse(operador);
 	}
 
+	@Override
+	public void deletaOperadorAtravesId(UUID idOperador) {
+		log.info("[inicia] OperadorApplicationService - deletaOperadorAtravesId");
+		Operador operador =  operadorRepository.buscaOperadorAtravesId(idOperador);
+		log.info("[finaliza] OperadorApplicationService - deletaOperadorAtravesId");
+		
+	}
+
 }

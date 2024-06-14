@@ -44,6 +44,7 @@ public class OperadorController implements OperadorAPI {
 	public void deletaOperadorAtravesId(UUID idOperador) {
 		log.info("[inicia] OperadorController - deletaOperadorAtravesId");
 		log.info("[idOperador] {}", idOperador);
+		operadorService.deletaOperadorAtravesId(idOperador);
 		log.info("[finaliza] OperadorController - deletaOperadorAtravesId");
 		
 	}
