@@ -40,4 +40,12 @@ public class OperadorController implements OperadorAPI {
 		return operadorDetalhado ;
 	}
 
+	@Override
+	public void deletaOperadorAtravesId(UUID idOperador) {
+		log.info("[inicia] OperadorController - deletaOperadorAtravesId");
+		log.info("[idOperador] {}", idOperador);
+		log.info("[finaliza] OperadorController - deletaOperadorAtravesId");
+		
+	}
+
 }
