@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.dinahborges.escalasonoplastia.operador.application.service.OperadorService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -47,6 +48,12 @@ public class OperadorController implements OperadorAPI {
 		operadorService.deletaOperadorAtravesId(idOperador);
 		log.info("[finaliza] OperadorController - deletaOperadorAtravesId");
 		
+	}
+
+	@Override
+	public void patchAlteracaoOperador(UUID idOperador, @Valid OperadorAlteracaoRequest operadorAlteracaoRequest) {
+		log.info("[inicia] OperadorController - patchAlteracaoOperador");
+		log.info("[finaliza] OperadorController - patchAlteracaoOperador");
 	}
 
 }
