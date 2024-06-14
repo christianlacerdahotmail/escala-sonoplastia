@@ -9,4 +9,5 @@ public interface OperadorRepository {
 	Operador salva(Operador operador);
 	List<Operador> buscaTodosOperadores();
 	Operador buscaOperadorAtravesId(UUID idOperador);
+	void deletaOperador(Operador operador);
 }

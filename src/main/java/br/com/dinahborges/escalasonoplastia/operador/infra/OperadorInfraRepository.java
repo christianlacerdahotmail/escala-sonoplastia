@@ -44,4 +44,11 @@ public class OperadorInfraRepository implements OperadorRepository {
 		return operador;
 	}
 
+	@Override
+	public void deletaOperador(Operador operador) {
+		log.info("[inicia] OperadorInfraRepository - deletaOperadorAtravesId");
+		operadorSpringDataJPARepository.delete(operador);
+		log.info("[finaliza] OperadorInfraRepository - deletaOperadorAtravesId");
+	}
+
 }

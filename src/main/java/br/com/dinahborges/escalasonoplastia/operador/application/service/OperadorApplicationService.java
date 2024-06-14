@@ -50,6 +50,7 @@ public class OperadorApplicationService implements OperadorService {
 	public void deletaOperadorAtravesId(UUID idOperador) {
 		log.info("[inicia] OperadorApplicationService - deletaOperadorAtravesId");
 		Operador operador =  operadorRepository.buscaOperadorAtravesId(idOperador);
+		operadorRepository.deletaOperador(operador);
 		log.info("[finaliza] OperadorApplicationService - deletaOperadorAtravesId");
 		
 	}
