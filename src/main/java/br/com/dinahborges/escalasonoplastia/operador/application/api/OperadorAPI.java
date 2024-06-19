@@ -37,6 +37,7 @@ public interface OperadorAPI {
 	
 	@PatchMapping(value = "/{idOperador}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	void  patchAlteracaoOperador(@Valid UUID idOperador, @RequestBody OperadorAlteracaoRequest operadorAlteracaoRequest);
+	void  patchAlteracaoOperador(@PathVariable UUID idOperador,
+			@Valid @RequestBody OperadorAlteracaoRequest operadorAlteracaoRequest);
 
 }

@@ -11,7 +11,7 @@ public class OperadorAlteracaoRequest {
 	private LocalDate data;
 	@NotNull
 	private String diaDaSemana;
-	private String primeiroNome;
+	
 	
 
 }

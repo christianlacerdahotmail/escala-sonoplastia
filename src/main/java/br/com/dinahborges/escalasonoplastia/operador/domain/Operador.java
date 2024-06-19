@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import br.com.dinahborges.escalasonoplastia.operador.application.api.OperadorAlteracaoRequest;
 import br.com.dinahborges.escalasonoplastia.operador.application.api.OperadorRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -39,6 +40,14 @@ public class Operador {
 		this.diaDaSemana = operadorRequest.getDiaDaSemana();
 		this.primeiroNome =  operadorRequest.getPrimeiroNome();
 		this.dataHoraDoCadatro = LocalDateTime.now();
+	}
+
+
+	public void altera(OperadorAlteracaoRequest operadorRequest) {
+		this.data = operadorRequest.getData();
+		this.diaDaSemana = operadorRequest.getDiaDaSemana();
+		this.dataHoraDaUltimaAlteracao = LocalDateTime.now();
+		
 	}
 	
 	

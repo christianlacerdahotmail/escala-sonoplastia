@@ -53,6 +53,8 @@ public class OperadorController implements OperadorAPI {
 	@Override
 	public void patchAlteracaoOperador(UUID idOperador, @Valid OperadorAlteracaoRequest operadorAlteracaoRequest) {
 		log.info("[inicia] OperadorController - patchAlteracaoOperador");
+		log.info("[idOperador] {}", idOperador);
+		operadorService.patchAlteracaoOperador(idOperador, operadorAlteracaoRequest);
 		log.info("[finaliza] OperadorController - patchAlteracaoOperador");
 	}
 

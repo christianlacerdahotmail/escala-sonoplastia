@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import br.com.dinahborges.escalasonoplastia.operador.application.api.OperadorAlteracaoRequest;
 import br.com.dinahborges.escalasonoplastia.operador.application.api.OperadorDetalhadoResponse;
 import br.com.dinahborges.escalasonoplastia.operador.application.api.OperadorListResponse;
 import br.com.dinahborges.escalasonoplastia.operador.application.api.OperadorRequest;
@@ -52,6 +53,16 @@ public class OperadorApplicationService implements OperadorService {
 		Operador operador =  operadorRepository.buscaOperadorAtravesId(idOperador);
 		operadorRepository.deletaOperador(operador);
 		log.info("[finaliza] OperadorApplicationService - deletaOperadorAtravesId");
+		
+	}
+
+	@Override
+	public void patchAlteracaoOperador(UUID idOperador, OperadorAlteracaoRequest operadorAlteracaoRequest) {
+		log.info("[inicia] OperadorApplicationService - patchAlteracaoOperador");
+		Operador operador =  operadorRepository.buscaOperadorAtravesId(idOperador);
+		operador.altera(operadorAlteracaoRequest);
+		operadorRepository.salva(operador);
+		log.info("[finaliza] OperadorApplicationService - patchAlteracaoOperador");
 		
 	}
 
